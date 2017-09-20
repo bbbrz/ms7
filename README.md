@@ -9,24 +9,25 @@ MultiScreener Max Patches adapted for HD video
 - open server patch on first computer
 - load video, change settings (settings saved automatically)
 - open client on second computer
-- load video, change settings
+- load video, change settings (settings saved automatically)
 - start server video
-- videos should play back in sync
+- videos should play in sync
 
 **for automated playback on mac**
 - set up video playback on server and client
 - set automatic start up and shut down times of computer (Mac System Preferences > Energy > Schedule)
 - use applescript to load Max and MultiScreener at startup (often needs delays to load properly)
 - set auto shut down time in MultiScreener patches, just before Mac computer auto-shutdown, this let's the computer shut down quietly without dialogs
+- test!
 
 **Background**
 This patch was originally created by Zach Poff (https://www.zachpoff.com/software/multiscreener/) to synchronise multiple videos across a network of computers. It functions through a server / client relation where the server sends the current time of its video playback to every client on the network, which then attempts to align its playback. 
 
-Please read the further info on Zach's website.
+Please read the further info on Zach's [website](https://www.zachpoff.com/software/multiscreener/).
 
-This update is for Max 7 and using the AV Foundation video engine to enable this to play HD ( 1920x1080 or 1920x1200+ ) video. The main changes from Zach's original version are: 
+This update is for Max 7 and using the AV Foundation video engine to enable this to play HD ( 1920x1080 @ 30fps or 1920x1200+ ) video. The main changes from Zach's original version are: 
 - changing video object chain to use [jit.qt.movie @colormode uyuv] > [jit.gl.slab @file cc.uyvy2rgba.lite.jxs] > [jit.gl.videoplane] for more efficient playback. This technique was found on the Cycling 74 forums
-- Slight alterations to 
+- slight alterations to the sync mechanism to avoid bottlenecks and use a single metro for the playback and sync
 - addition of code to set an "auto-shutdown" time where Max will close itself, allowing the computer to nicely shut itself down without error warnings
 
 This has primarily been used for playing video art in gallery contexts where maximum automation is desirable. These patches should automatically sync to each other regardless of which is started first and other factors and allows auto-startup and shutdown.
@@ -40,7 +41,7 @@ One way to convert videos is to use ffmpeg https://www.ffmpeg.org/
 
 **Tested on**
 Mac OS X 10.8 - 10.10
-Max 7.3.4 (does not require licence to run)
+Max 7.3.4 (does not require licence to run, but is proprietry software)
 download from https://cycling74.com/
 
 Generally gives good results on Mac Mini computers.
