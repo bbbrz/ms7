@@ -21,7 +21,7 @@ MultiScreener Max Patches adapted for HD video
 - test!
 
 **Background**
-This patch was originally created by Zach Poff (https://www.zachpoff.com/software/multiscreener/) to synchronise multiple videos across a network of computers. It functions through a server / client relation where the server sends the current time of its video playback to every client on the network, which then attempts to align its playback. 
+This patch was originally created by [Zach Poff](https://www.zachpoff.com/software/multiscreener/) to synchronise multiple videos across a network of computers. It functions through a server / client relation where the server sends the current time of its video playback to every client on the network, which then attempts to align its playback. 
 
 Please read the further info on Zach's [website](https://www.zachpoff.com/software/multiscreener/).
 
